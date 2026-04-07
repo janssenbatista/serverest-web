@@ -1,0 +1,91 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', 'Avenir Next', 'Segoe UI', sans-serif;
+  --font-display: 'Space Grotesk', 'Avenir Next', 'Segoe UI', sans-serif;
+
+  --color-primary: #613985;
+  --color-primary-50: #f6f1fb;
+  --color-primary-100: #ece3f7;
+  --color-primary-200: #d8c7ef;
+  --color-primary-300: #bf9fe2;
+  --color-primary-400: #a174d3;
+  --color-primary-500: #8551be;
+  --color-primary-600: #613985;
+  --color-primary-700: #4f2f6d;
+  --color-primary-800: #3f2657;
+  --color-primary-900: #311e45;
+  --color-primary-950: #20122e;
+
+  --color-bg: #f8f5fc;
+  --color-bg-soft: #f1eafb;
+  --color-surface: #ffffff;
+  --color-surface-2: #f5eefc;
+  --color-text: #241630;
+  --color-text-muted: #5f4c71;
+  --color-border: #dbcbef;
+  --color-success: #1f8a62;
+  --color-warning: #c17b16;
+  --color-danger: #b93854;
+
+  --radius-panel: 1.2rem;
+  --radius-pill: 999px;
+
+  --shadow-soft: 0 12px 35px -18px color-mix(in oklab, var(--color-primary-700) 35%, black 35%);
+  --shadow-strong: 0 20px 50px -22px color-mix(in oklab, var(--color-primary-800) 45%, black 40%);
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+  }
+
+  body {
+    @apply bg-bg text-text m-0 min-h-screen antialiased;
+    background-image:
+      radial-gradient(
+        circle at 10% 10%,
+        color-mix(in oklab, var(--color-primary-200) 45%, white),
+        transparent 38%
+      ),
+      radial-gradient(
+        circle at 90% 20%,
+        color-mix(in oklab, var(--color-primary-100) 60%, white),
+        transparent 42%
+      );
+  }
+
+  #root {
+    @apply min-h-screen;
+  }
+}
+
+@layer components {
+  .ui-shell {
+    @apply mx-auto flex min-h-screen w-full max-w-6xl flex-col gap-8 px-4 py-10 md:px-8;
+  }
+
+  .ui-panel {
+    @apply rounded-panel border-border bg-surface border p-6;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .ui-panel-strong {
+    @apply rounded-panel border-primary-300 bg-surface-2 border p-6;
+    box-shadow: var(--shadow-strong);
+  }
+
+  .ui-button-primary {
+    @apply rounded-pill bg-primary inline-flex items-center justify-center px-5 py-2.5 font-semibold text-white;
+    @apply hover:bg-primary-700 focus-visible:outline-primary-400 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2;
+  }
+
+  .ui-button-secondary {
+    @apply rounded-pill border-primary-300 text-primary-700 inline-flex items-center justify-center border bg-white px-5 py-2.5 font-semibold;
+    @apply hover:bg-primary-50 focus-visible:outline-primary-300 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2;
+  }
+
+  .ui-badge {
+    @apply rounded-pill bg-primary-100 text-primary-800 inline-flex items-center px-3 py-1 text-sm font-medium;
+  }
+}
