@@ -76,12 +76,12 @@
   }
 
   .ui-button-primary {
-    @apply rounded-pill bg-primary inline-flex items-center justify-center px-5 py-2.5 font-semibold text-white;
+    @apply rounded-pill bg-primary inline-flex cursor-pointer items-center justify-center px-5 py-2.5 font-semibold text-white;
     @apply hover:bg-primary-700 focus-visible:outline-primary-400 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2;
   }
 
   .ui-button-secondary {
-    @apply rounded-pill border-primary-300 text-primary-700 inline-flex items-center justify-center border bg-white px-5 py-2.5 font-semibold;
+    @apply rounded-pill border-primary-300 text-primary-700 inline-flex cursor-pointer items-center justify-center border bg-white px-5 py-2.5 font-semibold;
     @apply hover:bg-primary-50 focus-visible:outline-primary-300 transition-colors focus-visible:outline-2 focus-visible:outline-offset-2;
   }
 
